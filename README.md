@@ -1,16 +1,15 @@
 freevirgil
 ==============================
-[//]: # (Badges)
-[![GitHub Actions Build Status](https://github.com/REPLACE_WITH_OWNER_ACCOUNT/freevirgil/workflows/CI/badge.svg)](https://github.com/REPLACE_WITH_OWNER_ACCOUNT/freevirgil/actions?query=workflow%3ACI)
-[![codecov](https://codecov.io/gh/REPLACE_WITH_OWNER_ACCOUNT/freevirgil/branch/master/graph/badge.svg)](https://codecov.io/gh/REPLACE_WITH_OWNER_ACCOUNT/freevirgil/branch/master)
 
-
-A short description of the project (less than one line).
+example
 
 ### Copyright
 
 Copyright (c) 2022, zach23
 
+This work is free. You can redistribute it and/or modify it under the
+terms of the Do What The Fuck You Want To Public License, Version 2,
+as published by Sam Hocevar. See http://www.wtfpl.net/ for more details.
 
 #### Acknowledgements
  
