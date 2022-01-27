@@ -1,7 +1,7 @@
 freevirgil
 ==============================
 
-example
+`pip install .`
 
 ### Copyright
 
