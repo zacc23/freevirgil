@@ -1,7 +1,22 @@
+
+Class Overview
+===============
+.. autosummary::
+	:toctree: autosummary
+
+	freevirgil.hamiltonian
+	freevirgil.spin_conf
+
 API Documentation
 =================
 
-.. autosummary::
-   :toctree: autosummary
+.. currentmodule:: freevirgil
 
-   freevirgil.canvas
+.. autoclass:: hamiltonian
+   :members:
+   :special-members:
+   :noindex:
+.. autoclass:: spin_conf
+   :members:
+   :special-members:
+   :noindex:
