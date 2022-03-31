@@ -19,9 +19,34 @@ class spin_conf:
         Returns
         -------
         """
-        self.N = N
+        self.sites = N
         self.dim = 2**N
+        self.config = [0] * N
     
+    def M(self):
+        """
+        Magnetization of configuration
+
+        Parameters
+        ----------
+
+        Returns
+        -------
+        M : float
+            magnetization
+        """
+        #TODO: make sure config is right size
+
+        N_up = 0
+        N_down = 0
+        for i in range(0, self.sites):
+            if self.config[i] == 1:
+                N_up += 1
+            else:
+                N_down += 1
+
+        return N_up - N_down
+
     def dec_conf(self, dec):
         """
         Convert decimal to binary (-1, 1)
@@ -35,8 +60,6 @@ class spin_conf:
 
         Returns
         -------
-        conf : int list
-            Spin configuration list (-1, 1)
         """
         conf = [int(i) for i in bin(dec)[2:]]
         
@@ -44,14 +67,22 @@ class spin_conf:
             if conf[i] == 0:
                 conf[i] = -1
         
-        while len(conf) < self.N:
+        while len(conf) < self.sites:
             conf = [-1] + conf
             
-        return conf
-        
-# ADD FUNCTION for specifying possible config size
-#configs = 2 ** self.N
-#spin = [0] * configs
+        self.config = conf
 
-# ADJUST CLASS INIT for hamiltonian
-#ham = hamiltonian(N, J=-2.0, k=1.1)
+    def set_conf(self, conf):
+        """
+        Specify binary (-1, 1) 
+        spin configuration
+        
+        Parameters
+        ----------
+        conf : int list
+            Spin configuration list (-1, 1)
+
+        Returns
+        -------
+        """
+        self.config = conf       
