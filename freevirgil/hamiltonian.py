@@ -40,20 +40,16 @@ class hamiltonian():
         energy : float
             Energy of configuration
         """
-        sites = len(spin)
-
-		#TODO: fix use of spin class
-        
         sum1 = 0
         sum2 = 0
-        for i in range(0, sites-1):
+        for i in range(0, spin.sites-1):
 
-            sum1 += spin[i] * spin[i+1]
-            sum2 += spin[i]
+            sum1 += spin.config[i] * spin.config[i+1]
+            sum2 += spin.config[i]
             # Periodic boundary conditions
-            if (i == sites-2):
-                sum1 += spin[i+1] * spin[0]
-                sum2 += spin[i+1]
+            if (i == spin.sites-2):
+                sum1 += spin.config[i+1] * spin.config[0]
+                sum2 += spin.config[i+1]
            
         return (-self.J * sum1) + (self.mu * sum2)      
 
@@ -106,7 +102,7 @@ class hamiltonian():
         EE = EE/Z
         MM = MM/Z
 
-        HC = (EE - E*E) / (T*T)
+        heat_capacity = (EE - E*E) / (T*T)
         magnetic_susceptibility = (MM - M*M) / T
 
         return E, M, heat_capacity, magnetic_susceptibility 

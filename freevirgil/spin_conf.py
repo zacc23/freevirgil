@@ -35,7 +35,6 @@ class spin_conf:
         M : float
             magnetization
         """
-        #TODO: make sure config is right size
 
         N_up = 0
         N_down = 0
