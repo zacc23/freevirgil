@@ -3,8 +3,7 @@ freevirgil
 
 `pip install .`
 
-* Submit pull requests with a notice on why your changes
-* or additions are necessary
+* Submit pull requests with a notice on why your changes or additions are necessary
 
 ### Copyright
 
