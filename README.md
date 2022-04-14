@@ -1,4 +1,4 @@
-freevirgil
+FreeVirgil
 ==============================
 
 `pip install .`
