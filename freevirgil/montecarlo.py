@@ -50,6 +50,7 @@ class montecarlo():
                 else:
                     net_E = -4 * ham.J
 
+        # TODO: explain how this works
         net_E += 2*ham.mu * (2*spin.config[i] - 1) 
         
         usable = true
@@ -81,10 +82,20 @@ class montecarlo():
         T : int
             Temperature
 
+        Returns
+        -------
+        Es : float list
+             Energy of sample
+        Ms : float list
+             Magnetization of sample
+        EEs : float list
+              Average energy of sample      
+        MMs : float list
+              Average magnetization of sample
+	"""
         # samples
         Es = [0] * n_sweep
-        Ms = [0] * n_sweep
-        EEs = [0] * n_sweep
+        Ms = [0] * n_sweep EEs = [0] * n_sweep
         MMs = [0] * n_sweep
 
         for site in range(0, n_burn):
