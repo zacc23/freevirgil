@@ -1,0 +1,265 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Class Overview &#8212; freevirgil  documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/classic.css" />
+    
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="freevirgil.hamiltonian" href="autosummary/freevirgil.hamiltonian.html" />
+    <link rel="prev" title="Getting Started" href="getting_started.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="autosummary/freevirgil.hamiltonian.html" title="freevirgil.hamiltonian"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="getting_started.html" title="Getting Started"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">freevirgil  documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Class Overview</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="class-overview">
+<h1>Class Overview<a class="headerlink" href="#class-overview" title="Permalink to this headline">¶</a></h1>
+<table class="longtable docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="autosummary/freevirgil.hamiltonian.html#freevirgil.hamiltonian" title="freevirgil.hamiltonian"><code class="xref py py-obj docutils literal notranslate"><span class="pre">freevirgil.hamiltonian</span></code></a>([J, mu])</p></td>
+<td><p>Class for Hamiltonian</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="autosummary/freevirgil.spin_conf.html#freevirgil.spin_conf" title="freevirgil.spin_conf"><code class="xref py py-obj docutils literal notranslate"><span class="pre">freevirgil.spin_conf</span></code></a>([N])</p></td>
+<td><p>Class for generating spin configurations</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="api-documentation">
+<h1>API Documentation<a class="headerlink" href="#api-documentation" title="Permalink to this headline">¶</a></h1>
+<dl class="py class">
+<dt class="sig sig-object py">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">freevirgil.</span></span><span class="sig-name descname"><span class="pre">hamiltonian</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">J</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">-</span> <span class="pre">2.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mu</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1.0</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/freevirgil/hamiltonian.html#hamiltonian"><span class="viewcode-link"><span class="pre">[source]</span></span></a></dt>
+<dd><p>Class for Hamiltonian</p>
+<div class="math notranslate nohighlight">
+\[H = -J\sum_{\left&lt;ij\right&gt;} \sigma_i\sigma_j + \mu\sum_i\sigma_i\]</div>
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">E</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">spin</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/freevirgil/hamiltonian.html#hamiltonian.E"><span class="viewcode-link"><span class="pre">[source]</span></span></a></dt>
+<dd><p>Energy of configuration <cite>spin</cite></p>
+<div class="math notranslate nohighlight">
+\[E = \left&lt;\hat{H}\right&gt;\]</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>spin</strong> (<a class="reference internal" href="autosummary/freevirgil.spin_conf.html#freevirgil.spin_conf" title="freevirgil.spin_conf"><code class="xref py py-class docutils literal notranslate"><span class="pre">spin_conf</span></code></a>) – Spin configuration</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>energy</strong> – Energy of configuration</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">J</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">-</span> <span class="pre">2.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mu</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1.0</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/freevirgil/hamiltonian.html#hamiltonian.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a></dt>
+<dd><p>Constructor</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>J</strong> (<em>float, optional</em>) – Coupling strength</p></li>
+<li><p><strong>mu</strong> (<em>float, optional</em>) – Chemical potential</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">__weakref__</span></span></dt>
+<dd><p>list of weak references to the object (if defined)</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">avg</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">conf</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">T</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/freevirgil/hamiltonian.html#hamiltonian.avg"><span class="viewcode-link"><span class="pre">[source]</span></span></a></dt>
+<dd><p>Exact average values</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>spin</strong> (<a class="reference internal" href="autosummary/freevirgil.spin_conf.html#freevirgil.spin_conf" title="freevirgil.spin_conf"><code class="xref py py-class docutils literal notranslate"><span class="pre">spin_conf</span></code></a>) – Spin configuration</p></li>
+<li><p><strong>T</strong> (<em>int</em>) – Temperature</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><ul class="simple">
+<li><p><strong>E</strong> (<em>float</em>) – Energy of configuration</p></li>
+<li><p><strong>M</strong> (<em>float</em>) – Magnetization of configuration</p></li>
+<li><p><strong>HC</strong> (<em>float</em>) – Heat capacity</p></li>
+<li><p><strong>MS</strong> (<em>float</em>) – Magnetic susceptability</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">freevirgil.</span></span><span class="sig-name descname"><span class="pre">spin_conf</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">N</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/freevirgil/spin_conf.html#spin_conf"><span class="viewcode-link"><span class="pre">[source]</span></span></a></dt>
+<dd><dl class="simple">
+<dt>Class for generating spin configurations</dt><dd><p>of various dimensions</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">M</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/freevirgil/spin_conf.html#spin_conf.M"><span class="viewcode-link"><span class="pre">[source]</span></span></a></dt>
+<dd><p>Magnetization of configuration</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>M</strong> – magnetization</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">N</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/freevirgil/spin_conf.html#spin_conf.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a></dt>
+<dd><p>Initialize configuration</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>N</strong> (<em>int, default: 10</em>) – Amount of sites</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">__weakref__</span></span></dt>
+<dd><p>list of weak references to the object (if defined)</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">dec_conf</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dec</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/freevirgil/spin_conf.html#spin_conf.dec_conf"><span class="viewcode-link"><span class="pre">[source]</span></span></a></dt>
+<dd><p>Convert decimal to binary (-1, 1)
+spin configuration</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>dec</strong> (<em>int</em>) – Decimal number to convert to
+binary (0, 1) -&gt; (-1, 1)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">set_conf</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">conf</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/freevirgil/spin_conf.html#spin_conf.set_conf"><span class="viewcode-link"><span class="pre">[source]</span></span></a></dt>
+<dd><p>Specify binary (-1, 1)
+spin configuration</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>conf</strong> (<em>int list</em>) – Spin configuration list (-1, 1)</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <div>
+    <h3><a href="index.html">Table of Contents</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">Class Overview</a></li>
+<li><a class="reference internal" href="#api-documentation">API Documentation</a></li>
+</ul>
+
+  </div>
+  <div>
+    <h4>Previous topic</h4>
+    <p class="topless"><a href="getting_started.html"
+                          title="previous chapter">Getting Started</a></p>
+  </div>
+  <div>
+    <h4>Next topic</h4>
+    <p class="topless"><a href="autosummary/freevirgil.hamiltonian.html"
+                          title="next chapter">freevirgil.hamiltonian</a></p>
+  </div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/api.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="autosummary/freevirgil.hamiltonian.html" title="freevirgil.hamiltonian"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="getting_started.html" title="Getting Started"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">freevirgil  documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Class Overview</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2022, zach23. Project structure based on the Computational Molecular Science Python Cookiecutter version 1.6.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.4.0.
+    </div>
+  </body>
+</html>
