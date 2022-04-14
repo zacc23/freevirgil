@@ -28,6 +28,6 @@ def test_ham_energy():
         # MS ~= 0.00611116
         assert(0.0061111 < MS < 0.0061112)
         
-if __name__== "__main__":
+if __name__ == "__main__":
         test_freevirgil_imported()
         test_ham_energy()
