@@ -38,7 +38,7 @@ class montecarlo():
         spin : :class:`spin_conf`
             New spin configuration
         """
-        for i in range(0, spin.N)
+        for i in range(0, spin.N):
         
             # all sites to the right and left
             rside = (i+1) % spin.N
@@ -69,7 +69,7 @@ class montecarlo():
 
         return spin
 
-    def metropolis(self, ham, spin, T)
+    def metropolis(self, ham, spin, T):
         """
         Metropolis sampling
 
@@ -92,7 +92,7 @@ class montecarlo():
               Average energy of sample      
         MMs : float list
               Average magnetization of sample
-	"""
+        """
         # samples
         Es = [0] * n_sweep
         Ms = [0] * n_sweep EEs = [0] * n_sweep
