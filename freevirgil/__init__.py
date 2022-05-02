@@ -5,7 +5,6 @@ Introduction to the Free Virgil method
 
 # Add imports here
 from .freevirgil import *
-from .montecarlo import *
 from .hamiltonian import *
 from .spin_conf import *
 
