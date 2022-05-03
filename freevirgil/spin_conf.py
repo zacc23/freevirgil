@@ -69,6 +69,7 @@ class spin_conf:
         while len(conf) < self.sites:
             conf = [-1] + conf
             
+        print(conf)
         self.config = conf
 
     def set_conf(self, conf):

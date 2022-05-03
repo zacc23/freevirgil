@@ -1,3 +1,4 @@
+import math
 import random
 
 class montecarlo():
@@ -19,7 +20,7 @@ class montecarlo():
         self.n_sweep = n_sweep
         self.n_burn = n_burn
 
-    def sweep(self, ham, spin):
+    def sweep(self, ham, spin, T):
         """
         Sweep through all sites to 
         create a new configuration
@@ -38,11 +39,11 @@ class montecarlo():
         spin : :class:`spin_conf`
             New spin configuration
         """
-        for i in range(0, spin.N):
+        for i in range(0, spin.sites):
         
             # all sites to the right and left
-            rside = (i+1) % spin.N
-            lside = (i+1) % spin.N
+            rside = (i+1) % spin.sites
+            lside = (i+1) % spin.sites
 
             if (spin.config[lside] == spin.config[rside]):
                 if (spin.config[lside] == spin.config[i]): 
@@ -53,19 +54,20 @@ class montecarlo():
         # TODO: explain how this works
         net_E += 2*ham.mu * (2*spin.config[i] - 1) 
         
-        usable = true
+        usable = True
         if (net_E > 0):
         
             rand = random.random()
             if (rand > math.exp( -net_E/T )):
-                usable = false
+
+                usable = False
 
         if (usable):
 
             if (spin.config[i] == -1):
-                spin.config = 1;
+                spin.config[i] = 1;
             else:
-                spin.config = -1;
+                spin.config[i] = -1;
 
         return spin
 
@@ -94,11 +96,12 @@ class montecarlo():
               Average magnetization of sample
         """
         # samples
-        Es = [0] * n_sweep
-        Ms = [0] * n_sweep EEs = [0] * n_sweep
-        MMs = [0] * n_sweep
+        Es = [0] * self.n_sweep
+        Ms = [0] * self.n_sweep 
+        EEs = [0] * self.n_sweep
+        MMs = [0] * self.n_sweep
 
-        for site in range(0, n_burn):
+        for site in range(0, self.n_burn):
 
             self.sweep(ham, spin, T)
             
@@ -111,9 +114,9 @@ class montecarlo():
         MMs[0] = Mi * Mi
         EEs[0] = Ei * Ei
 
-        for s in range(1, n_sweep):
+        for s in range(1, self.n_sweep):
         
-            self.sweep(spin, T)
+            self.sweep(ham, spin, T)
             Ei = ham.E(spin)
             Mi = spin.M()
 

@@ -96,6 +96,7 @@ class hamiltonian():
             M += Mi * Zi
             MM += Mi * Mi * Zi
             Z += Zi
+            print(Ei,Zi,E,EE,Mi,M,MM,Z) 
               
         E = E/Z
         M = M/Z
