@@ -21,7 +21,7 @@ MSvT= [0] * irange
 
 for i in range(0, irange):
 
-    T[i] = 0.1 * (i + 1)
+    T[i] = 0.1 * (i + 1) + 1
 
     E, M, EE, MM = mcarlo.metropolis(ham, spin, T[i])   
 
