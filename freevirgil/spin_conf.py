@@ -69,20 +69,4 @@ class spin_conf:
         while len(conf) < self.sites:
             conf = [-1] + conf
             
-        print(conf)
         self.config = conf
-
-    def set_conf(self, conf):
-        """
-        Specify binary (-1, 1) 
-        spin configuration
-        
-        Parameters
-        ----------
-        conf : int list
-            Spin configuration list (-1, 1)
-
-        Returns
-        -------
-        """
-        self.config = conf       
