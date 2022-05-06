@@ -50,8 +50,8 @@ Examples
 Plot 
 ````
 
-.. include::
-	:code: ../examples/plot.py
+.. literalinclude:: ../examples/plot.py
+  :language: python
 
 .. image:: ../examples/plot.png
   :width: 400
