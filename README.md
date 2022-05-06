@@ -1,7 +1,7 @@
 FreeVirgil
 ==============================
 [//]: # (Badges)
-[![GitHub Actions Build Status](https://github.com/zacc23/projectname/workflows/CI/badge.svg)](https://github.com/zacc23/projectname/actions?query=workflow%3ACI)
+[![GitHub Actions Build Status](https://github.com/zacc23/freevirgil/workflows/CI/badge.svg)](https://github.com/zacc23/freevirgil/actions?query=workflow%3ACI)
 
 
 `pip install .`
