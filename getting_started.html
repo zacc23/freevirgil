@@ -61,20 +61,46 @@
 </pre></div>
 </div>
 </div>
-<div class="section" id="theory">
-<h2>Theory<a class="headerlink" href="#theory" title="Permalink to this headline">¶</a></h2>
-<p>Gibbs Distribution: <span class="math notranslate nohighlight">\(P(\alpha) = e^{-E(\alpha)/kT}\)</span>.</p>
-<p>with Boltzmann constant, <span class="math notranslate nohighlight">\(k = 1.38064852 \times 10^{-23} J/K\)</span> and a temperature <cite>T</cite> in Kelvin</p>
-<p>Ising Hamiltonian:</p>
-<p>energy: <span class="math notranslate nohighlight">\(\displaystyle\hat{H}' = \frac{\hat{H}}{k} = -\frac{J}{k}\sum_{&lt;ij&gt;} s_is_j + \tfrac{\mu}{k}\sum_i s_i,\)</span></p>
-<p>magnetization: <span class="math notranslate nohighlight">\(M(\alpha) = N_{\text{up}}(\alpha) - N_{\text{down}}(\alpha)\)</span>.</p>
-<p>with</p>
+<div class="section" id="formulas">
+<h2>Formulas<a class="headerlink" href="#formulas" title="Permalink to this headline">¶</a></h2>
+<p>Gibbs Distribution: <span class="math notranslate nohighlight">\(P(\alpha) = e^{-E(\alpha)/kT}\)</span> with Boltzmann constant, <span class="math notranslate nohighlight">\(k = 1.38064852 \times 10^{-23} J/K\)</span> and a temperature <cite>T</cite> in Kelvin</p>
+<div class="section" id="ising-hamiltonian">
+<h3>Ising Hamiltonian<a class="headerlink" href="#ising-hamiltonian" title="Permalink to this headline">¶</a></h3>
+<p>Energy: <span class="math notranslate nohighlight">\(\displaystyle\hat{H}' = \frac{\hat{H}}{k} = -\frac{J}{k}\sum_{&lt;ij&gt;} s_is_j + \tfrac{\mu}{k}\sum_i s_i,\)</span></p>
+<p>Magnetization: <span class="math notranslate nohighlight">\(M(\alpha) = N_{\text{up}}(\alpha) - N_{\text{down}}(\alpha)\)</span>.</p>
+</div>
+<div class="section" id="averages">
+<h3>Averages<a class="headerlink" href="#averages" title="Permalink to this headline">¶</a></h3>
 <p><span class="math notranslate nohighlight">\(\left&lt;M\right&gt; = \sum_\alpha M(\alpha)P(\alpha)\)</span>.</p>
 <p><span class="math notranslate nohighlight">\(\left&lt;E\right&gt; = \sum_\alpha E(\alpha)P(\alpha)\)</span>.</p>
 </div>
+</div>
 <div class="section" id="examples">
 <h2>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
-<p>Configuration Energ</p>
+<p>import math
+import freevirgil as fv
+from matplotlib import pyplot as plt</p>
+<p>spin = fv.spin_conf(N=10)
+ham = fv.hamiltonian(J=-2, mu=1.1)</p>
+<p>irange = 100
+T = [0] * irange
+E = [0] * irange
+M = [0] * irange
+HC = [0] * irange
+MS = [0] * irange</p>
+<p>for i in range(0, irange):</p>
+<blockquote>
+<div><p>T[i] = 0.1 * (i + 1)
+E[i], M[i], HC[i], MS[i] = ham.avg(spin, T[i])</p>
+</div></blockquote>
+<p>plt.figure(num = 0, dpi = 100)
+plt.plot(T, E, label=”&lt;E&gt;”)
+plt.plot(T, M, label=”&lt;M&gt;”)
+plt.plot(T, HC,  label=”HC”)
+plt.plot(T, MS, label=”MS”)
+plt.legend()
+plt.xlabel(“Temperature”)</p>
+<p>plt.savefig(“plot.png”)</p>
 </div>
 </div>
 
@@ -88,7 +114,11 @@
   <ul>
 <li><a class="reference internal" href="#">Getting Started</a><ul>
 <li><a class="reference internal" href="#installation">Installation</a></li>
-<li><a class="reference internal" href="#theory">Theory</a></li>
+<li><a class="reference internal" href="#formulas">Formulas</a><ul>
+<li><a class="reference internal" href="#ising-hamiltonian">Ising Hamiltonian</a></li>
+<li><a class="reference internal" href="#averages">Averages</a></li>
+</ul>
+</li>
 <li><a class="reference internal" href="#examples">Examples</a></li>
 </ul>
 </li>
