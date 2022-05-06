@@ -24,15 +24,9 @@ or
 
 Theory
 ----------
-Gibbs Distribution:
+Gibbs Distribution: :math:`P(\alpha) = e^{-E(\alpha)/kT}`.
 
-:math:`P(\alpha) = e^{-E(\alpha)/kT}`.
-
-with Boltzmann constant,
-
-:math:`k = 1.38064852 \times 10^{-23} J/K`
-
-and a temperature `T` in Kelvin
+with Boltzmann constant, :math:`k = 1.38064852 \times 10^{-23} J/K` and a temperature `T` in Kelvin
 
 Ising Hamiltonian:
 energy:
