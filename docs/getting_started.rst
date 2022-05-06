@@ -53,6 +53,6 @@ Plot
 .. include::
 	:code: ../examples/plot.py
 
-.. image:: ./plot1.png
+.. image:: ../examples/plot.png
   :width: 400
   :alt: Quantities vs. Temperature
