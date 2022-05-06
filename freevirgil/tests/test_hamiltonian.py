@@ -6,7 +6,6 @@ Unit and regression test for the hamiltonian class.
 import sys
 import pytest
 import freevirgil
-import numpy as np
 
 def test_energy():
         spin = freevirgil.spin_conf(N=2)

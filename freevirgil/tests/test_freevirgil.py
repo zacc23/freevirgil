@@ -6,8 +6,6 @@ Unit and regression test for the freevirgil package.
 import sys
 import pytest
 import freevirgil
-import numpy as np
-
 
 def test_freevirgil_imported():
     """Sample test, will always pass so long as import statement worked."""
