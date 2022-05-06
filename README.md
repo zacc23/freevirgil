@@ -1,6 +1,7 @@
 FreeVirgil
 ==============================
 [//]: # (Badges)
+[![Stable](https://img.shields.io/badge/docs-stable-blue.svg)](https://https://zacc23.github.io/freevirgil/)
 [![GitHub Actions Build Status](https://github.com/zacc23/freevirgil/workflows/CI/badge.svg)](https://github.com/zacc23/freevirgil/actions?query=workflow%3ACI)
 
 
