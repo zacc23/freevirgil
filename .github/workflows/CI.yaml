@@ -64,7 +64,7 @@ jobs:
         flags: unittests
         name: codecov-${{ matrix.os }}-py${{ matrix.python-version }}
 
-docs:
+  docs:
     runs-on: ubuntu-latest
 
     steps:
