@@ -42,4 +42,6 @@ Averages
 
 Examples
 --------
-.. include:: ../examples/plot.py
+
+.. include::
+	:code: ../examples/plot.py
