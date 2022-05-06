@@ -47,5 +47,12 @@ Averages
 Examples
 --------
 
+Plot 
+````
+
 .. include::
 	:code: ../examples/plot.py
+
+.. image:: ./plot1.png
+  :width: 400
+  :alt: Quantities vs. Temperature
