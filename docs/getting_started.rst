@@ -25,20 +25,17 @@ or
 Formulas
 --------
 
-Gibbs Distribution
-``````````````````
+**Gibbs Distribution**
 
 :math:`P(\alpha) = e^{-E(\alpha)/kT}` with Boltzmann constant, :math:`k = 1.38064852 \times 10^{-23} J/K` and a temperature `T` in Kelvin
 
-Ising Hamiltonian
-`````````````````
+**Ising Hamiltonian**
 
 Energy: :math:`\displaystyle\hat{H}' = \frac{\hat{H}}{k} = -\frac{J}{k}\sum_{<ij>} s_is_j + \tfrac{\mu}{k}\sum_i s_i,`
 
 Magnetization: :math:`M(\alpha) = N_{\text{up}}(\alpha) - N_{\text{down}}(\alpha)`.
 
-Averages
-````````
+**Averages**
 
 :math:`\left<M\right> = \sum_\alpha M(\alpha)P(\alpha)`.
 
@@ -47,8 +44,7 @@ Averages
 Examples
 --------
 
-Plot 
-````
+**Plot** 
 
 .. literalinclude:: ../examples/plot.py
 
