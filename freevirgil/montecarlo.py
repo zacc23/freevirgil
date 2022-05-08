@@ -6,7 +6,7 @@ class montecarlo():
     Class for MonteCarlo
     """
 
-    def __init__(self, n_sweep=1000, n_burn=100, T=1):
+    def __init__(self, n_sweep=1000, n_burn=100):
         """
         Constructor
 
