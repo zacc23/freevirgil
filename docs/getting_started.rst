@@ -3,8 +3,8 @@ Getting Started
 
 This page details how to get started with FreeVirgil. 
 
-Installation
-------------
+Installation (Python)
+---------------------
 Requirements:
 
 * **Python3**
@@ -21,6 +21,28 @@ or
     git clone https://github.com/zacc23/freevirgil.git
     cd freevirgil
     pip install .
+
+Installation (C++)
+------------------
+
+Requirements:
+
+* **`CERN ROOT <https://root.cern/>`
+
+Compile by exectuting:
+
+For getting N spins:
+::
+
+	git clone https://github.com/zacc23/OhMyGodWhatHappenedToVirgil.git
+	cd OhMyGodWhatHappenedToVirgil
+	c++ examples/getN.cpp -I. -Ofast -Wall -Wpedantic -o getN
+
+For plotting:
+::
+	git clone https://github.com/zacc23/OhMyGodWhatHappenedToVirgil.git
+    cd OhMyGodWhatHappenedToVirgil
+	c++ examples/plot.cpp -Ofast -I. $(root-config --cflags --libs) -Wall -Wpedantic -o plot 
 
 References
 ----------
