@@ -7,7 +7,7 @@ Installation (Python)
 ---------------------
 Requirements:
 
-* **Python3**
+* Python3
 
 Install by exectuting:
 ::
@@ -27,22 +27,21 @@ Installation (C++)
 
 Requirements:
 
-* **`CERN ROOT <https://root.cern/>`
-
-Compile by exectuting:
+* `CERN ROOT <https://root.cern/>`_
 
 For getting N spins:
 ::
 
-	git clone https://github.com/zacc23/OhMyGodWhatHappenedToVirgil.git
-	cd OhMyGodWhatHappenedToVirgil
-	c++ examples/getN.cpp -I. -Ofast -Wall -Wpedantic -o getN
+    git clone https://github.com/zacc23/OhMyGodWhatHappenedToVirgil.git
+    cd OhMyGodWhatHappenedToVirgil
+    c++ examples/getN.cpp -I. -Ofast -Wall -Wpedantic -o getN
 
 For plotting:
 ::
-	git clone https://github.com/zacc23/OhMyGodWhatHappenedToVirgil.git
+
+    git clone https://github.com/zacc23/OhMyGodWhatHappenedToVirgil.git
     cd OhMyGodWhatHappenedToVirgil
-	c++ examples/plot.cpp -Ofast -I. $(root-config --cflags --libs) -Wall -Wpedantic -o plot 
+    c++ examples/plot.cpp -Ofast -I. $(root-config --cflags --libs) -Wall -Wpedantic -o plot 
 
 References
 ----------
