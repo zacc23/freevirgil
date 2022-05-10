@@ -1,0 +1,3 @@
+[submodule "OhMyGodWhatHappenedToVirgil"]
+	path = freevirgil-cpp
+	url = https://github.com/zacc23/OhMyGodWhatHappenedToVirgil.git
