@@ -83,7 +83,7 @@ c++ examples/plot.cpp -Ofast -I. $(root-config --cflags --libs) -Wall -Wpedantic
 <div class="section" id="references">
 <h2>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
 <p><strong>Gibbs Distribution</strong></p>
-<p><span class="math notranslate nohighlight">\(P(\alpha) = e^{-E(\alpha)/kT}\)</span> with Boltzmann constant, <span class="math notranslate nohighlight">\(k = 1.38064852 \times 10^{-23} J/K\)</span> and a temperature <cite>T</cite> in Kelvin. This gives the probability of observing <span class="math notranslate nohighlight">\(\alpha\)</span>, a particular spin.</p>
+<p>Probability: <span class="math notranslate nohighlight">\(P(\alpha) = e^{-E(\alpha)/kT}\)</span> with Boltzmann constant, <span class="math notranslate nohighlight">\(k = 1.38064852 \times 10^{-23} J/K\)</span> and a temperature <cite>T</cite> in Kelvin. This gives the probability of observing <span class="math notranslate nohighlight">\(\alpha\)</span>, a particular spin.</p>
 <p><strong>Ising Hamiltonian</strong></p>
 <p>Energy: <span class="math notranslate nohighlight">\(\displaystyle\hat{H}' = \frac{\hat{H}}{k} = -\frac{J}{k}\sum_{&lt;ij&gt;} s_is_j + \tfrac{\mu}{k}\sum_i s_i\)</span>. This gives the energy where <span class="math notranslate nohighlight">\(s_i = 1\)</span> if the <span class="math notranslate nohighlight">\(i^{th}\)</span> spin is <cite>up</cite> and <span class="math notranslate nohighlight">\(s_i = -1\)</span> if it is <cite>down</cite>.</p>
 <p>Magnetization: <span class="math notranslate nohighlight">\(M(\alpha) = N_{\text{up}}(\alpha) - N_{\text{down}}(\alpha)\)</span>. The sum of spins pointing up, minus those pointing down.</p>
@@ -93,7 +93,7 @@ c++ examples/plot.cpp -Ofast -I. $(root-config --cflags --libs) -Wall -Wpedantic
 </div>
 <div class="section" id="examples">
 <h2>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
-<p><strong>Plot</strong></p>
+<p><strong>Plot (Python)</strong></p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">math</span>
 <span class="kn">import</span> <span class="nn">freevirgil</span> <span class="k">as</span> <span class="nn">fv</span>
 <span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
@@ -125,6 +125,8 @@ c++ examples/plot.cpp -Ofast -I. $(root-config --cflags --libs) -Wall -Wpedantic
 </pre></div>
 </div>
 <a class="reference internal image-reference" href="_images/plot.png"><img alt="Quantities vs. Temperature" src="_images/plot.png" style="width: 400px;" /></a>
+<p><strong>Plot (C++)</strong></p>
+<a class="reference internal image-reference" href="../freevirgil-cpp/examples/plot.png"><img alt="Quantities vs. Temperature" src="../freevirgil-cpp/examples/plot.png" style="width: 400px;" /></a>
 </div>
 </div>
 
