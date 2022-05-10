@@ -48,7 +48,7 @@ References
 
 **Gibbs Distribution**
 
-:math:`P(\alpha) = e^{-E(\alpha)/kT}` with Boltzmann constant, :math:`k = 1.38064852 \times 10^{-23} J/K` and a temperature `T` in Kelvin. This gives the probability of observing :math:`\alpha`, a particular spin.
+Probability: :math:`P(\alpha) = e^{-E(\alpha)/kT}` with Boltzmann constant, :math:`k = 1.38064852 \times 10^{-23} J/K` and a temperature `T` in Kelvin. This gives the probability of observing :math:`\alpha`, a particular spin.
 
 **Ising Hamiltonian**
 
@@ -65,10 +65,20 @@ Magnetization: :math:`M(\alpha) = N_{\text{up}}(\alpha) - N_{\text{down}}(\alpha
 Examples
 --------
 
-**Plot** 
+**Plot (Python)** 
 
 .. literalinclude:: ../examples/plot.py
 
 .. image:: ../examples/plot.png
   :width: 400
   :alt: Quantities vs. Temperature
+
+**Plot (C++)**
+
+.. literalinclude:: ../freevirgil-cpp/examples/plot.cpp
+
+.. image:: ../freevirgil-cpp/examples/plot.png
+  :width: 400
+  :alt: Quantities vs. Temperature
+
+
