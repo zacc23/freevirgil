@@ -126,7 +126,92 @@ c++ examples/plot.cpp -Ofast -I. $(root-config --cflags --libs) -Wall -Wpedantic
 </div>
 <a class="reference internal image-reference" href="_images/plot.png"><img alt="Quantities vs. Temperature" src="_images/plot.png" style="width: 400px;" /></a>
 <p><strong>Plot (C++)</strong></p>
-<a class="reference internal image-reference" href="../freevirgil-cpp/examples/plot.png"><img alt="Quantities vs. Temperature" src="../freevirgil-cpp/examples/plot.png" style="width: 400px;" /></a>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/*</span>
+<span class="n">graph</span> <span class="n">program</span> <span class="k">for</span> <span class="n">the</span> <span class="n">freevirgil</span> <span class="n">package</span><span class="o">.</span>
+<span class="o">*/</span>
+
+<span class="c1">#include &lt;TCanvas.h&gt;</span>
+<span class="c1">#include &lt;TFrame.h&gt;</span>
+<span class="c1">#include &lt;TAxis.h&gt;</span>
+<span class="c1">#include &lt;TGraph.h&gt;</span>
+<span class="c1">#include &lt;TLegend.h&gt;</span>
+
+<span class="c1">#include &lt;iostream&gt;</span>
+<span class="c1">#include &quot;spin_conf.h&quot;</span>
+<span class="c1">#include &quot;hamiltonian.h&quot;</span>
+
+<span class="nb">int</span> <span class="n">main</span><span class="p">()</span>
+<span class="p">{</span>
+	<span class="n">TCanvas</span> <span class="o">*</span><span class="n">c1</span> <span class="o">=</span> <span class="n">new</span> <span class="n">TCanvas</span><span class="p">(</span><span class="s2">&quot;c1&quot;</span><span class="p">,</span> <span class="s2">&quot;Plot of Quantities versus Temperature&quot;</span><span class="p">,</span> 
+		<span class="mi">200</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">700</span><span class="p">,</span> <span class="mi">500</span><span class="p">);</span>
+	<span class="n">c1</span><span class="o">-&gt;</span><span class="n">SetGrid</span><span class="p">();</span>
+        <span class="n">c1</span><span class="o">-&gt;</span><span class="n">GetFrame</span><span class="p">()</span><span class="o">-&gt;</span><span class="n">SetBorderSize</span><span class="p">(</span><span class="mi">12</span><span class="p">);</span>
+
+	<span class="o">//</span> <span class="n">N</span> <span class="o">=</span> <span class="mi">10</span>
+        <span class="n">spin_conf</span> <span class="n">spin</span><span class="p">(</span><span class="mi">10</span><span class="p">);</span>
+        <span class="o">//</span> <span class="n">J</span> <span class="o">=</span> <span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="n">mu</span> <span class="o">=</span> <span class="mf">1.1</span>
+        <span class="n">hamiltonian</span> <span class="n">ham</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mf">1.1</span><span class="p">);</span>
+
+	<span class="n">const</span> <span class="nb">int</span> <span class="n">irange</span> <span class="o">=</span> <span class="mi">100</span><span class="p">;</span>
+        <span class="n">double</span> <span class="n">T</span><span class="p">[</span><span class="n">irange</span><span class="p">],</span>
+		<span class="n">E</span><span class="p">[</span><span class="n">irange</span><span class="p">],</span>
+		<span class="n">M</span><span class="p">[</span><span class="n">irange</span><span class="p">],</span> 
+		<span class="n">HC</span><span class="p">[</span><span class="n">irange</span><span class="p">],</span>
+	 	<span class="n">MS</span><span class="p">[</span><span class="n">irange</span><span class="p">];</span>
+
+        <span class="k">for</span> <span class="p">(</span><span class="nb">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">irange</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+        <span class="p">{</span>
+		<span class="o">//</span> <span class="n">start</span> <span class="n">at</span> <span class="o">.</span><span class="mi">1</span><span class="p">,</span> <span class="n">increment</span> <span class="n">by</span> <span class="o">.</span><span class="mi">1</span> <span class="n">until</span> <span class="n">end</span>
+                <span class="n">T</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="mf">0.1</span> <span class="o">*</span> <span class="p">(</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">);</span>
+		<span class="o">//</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">T</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+                <span class="n">ham</span><span class="o">.</span><span class="n">avg</span><span class="p">(</span><span class="n">spin</span><span class="p">,</span> <span class="n">T</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">E</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">M</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">HC</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">MS</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
+		<span class="o">//</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">T</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&lt;&lt;</span> <span class="s1">&#39; &#39;</span> <span class="o">&lt;&lt;</span> <span class="n">E</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&lt;&lt;</span> <span class="s1">&#39; &#39;</span> <span class="o">&lt;&lt;</span> <span class="n">M</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&lt;&lt;</span> 
+		<span class="o">//</span>	<span class="s1">&#39; &#39;</span> <span class="o">&lt;&lt;</span> <span class="n">HC</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&lt;&lt;</span> <span class="s1">&#39; &#39;</span> <span class="o">&lt;&lt;</span> <span class="n">MS</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+        <span class="p">}</span>
+
+	<span class="n">TGraph</span> <span class="o">*</span><span class="n">EvT</span> <span class="o">=</span> <span class="n">new</span> <span class="n">TGraph</span><span class="p">(</span><span class="n">irange</span><span class="p">,</span> <span class="n">T</span><span class="p">,</span> <span class="n">E</span><span class="p">);</span>
+	<span class="n">TGraph</span> <span class="o">*</span><span class="n">MvT</span> <span class="o">=</span> <span class="n">new</span> <span class="n">TGraph</span><span class="p">(</span><span class="n">irange</span><span class="p">,</span> <span class="n">T</span><span class="p">,</span> <span class="n">M</span><span class="p">);</span>
+        <span class="n">TGraph</span> <span class="o">*</span><span class="n">HCvT</span> <span class="o">=</span> <span class="n">new</span> <span class="n">TGraph</span><span class="p">(</span><span class="n">irange</span><span class="p">,</span> <span class="n">T</span><span class="p">,</span> <span class="n">HC</span><span class="p">);</span>
+        <span class="n">TGraph</span> <span class="o">*</span><span class="n">MSvT</span> <span class="o">=</span> <span class="n">new</span> <span class="n">TGraph</span><span class="p">(</span><span class="n">irange</span><span class="p">,</span> <span class="n">T</span><span class="p">,</span> <span class="n">MS</span><span class="p">);</span>
+	<span class="n">TLegend</span> <span class="o">*</span><span class="n">leg</span> <span class="o">=</span> <span class="n">new</span> <span class="n">TLegend</span><span class="p">(</span><span class="mf">0.75</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.9</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">);</span>
+
+	<span class="n">EvT</span><span class="o">-&gt;</span><span class="n">SetTitle</span><span class="p">(</span><span class="s2">&quot;Quantities versus Temperature&quot;</span><span class="p">);</span>
+	<span class="n">EvT</span><span class="o">-&gt;</span><span class="n">GetXaxis</span><span class="p">()</span><span class="o">-&gt;</span><span class="n">SetTitle</span><span class="p">(</span><span class="s2">&quot;Temperature&quot;</span><span class="p">);</span>
+        <span class="n">EvT</span><span class="o">-&gt;</span><span class="n">GetXaxis</span><span class="p">()</span><span class="o">-&gt;</span><span class="n">CenterTitle</span><span class="p">(</span><span class="n">true</span><span class="p">);</span>
+	<span class="n">EvT</span><span class="o">-&gt;</span><span class="n">GetXaxis</span><span class="p">()</span><span class="o">-&gt;</span><span class="n">SetRangeUser</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">);</span>
+        <span class="n">EvT</span><span class="o">-&gt;</span><span class="n">GetYaxis</span><span class="p">()</span><span class="o">-&gt;</span><span class="n">SetRangeUser</span><span class="p">(</span><span class="o">-</span><span class="mi">20</span><span class="p">,</span> <span class="mi">5</span><span class="p">);</span>
+	<span class="n">EvT</span><span class="o">-&gt;</span><span class="n">SetLineWidth</span><span class="p">(</span><span class="mi">3</span><span class="p">);</span>
+	<span class="n">EvT</span><span class="o">-&gt;</span><span class="n">SetLineColor</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+	<span class="n">EvT</span><span class="o">-&gt;</span><span class="n">Draw</span><span class="p">(</span><span class="s2">&quot;AC&quot;</span><span class="p">);</span>
+	
+	<span class="n">MvT</span><span class="o">-&gt;</span><span class="n">SetLineWidth</span><span class="p">(</span><span class="mi">3</span><span class="p">);</span>
+        <span class="n">MvT</span><span class="o">-&gt;</span><span class="n">SetLineColor</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
+        <span class="n">MvT</span><span class="o">-&gt;</span><span class="n">Draw</span><span class="p">(</span><span class="s2">&quot;CSame&quot;</span><span class="p">);</span>
+
+	<span class="n">HCvT</span><span class="o">-&gt;</span><span class="n">SetLineWidth</span><span class="p">(</span><span class="mi">3</span><span class="p">);</span>
+        <span class="n">HCvT</span><span class="o">-&gt;</span><span class="n">SetLineColor</span><span class="p">(</span><span class="mi">3</span><span class="p">);</span>
+        <span class="n">HCvT</span><span class="o">-&gt;</span><span class="n">Draw</span><span class="p">(</span><span class="s2">&quot;CSame&quot;</span><span class="p">);</span>
+
+	<span class="n">MSvT</span><span class="o">-&gt;</span><span class="n">SetLineWidth</span><span class="p">(</span><span class="mi">3</span><span class="p">);</span>
+        <span class="n">MSvT</span><span class="o">-&gt;</span><span class="n">SetLineColor</span><span class="p">(</span><span class="mi">4</span><span class="p">);</span>
+        <span class="n">MSvT</span><span class="o">-&gt;</span><span class="n">Draw</span><span class="p">(</span><span class="s2">&quot;CSame&quot;</span><span class="p">);</span>
+
+	<span class="o">//</span><span class="n">leg</span><span class="o">-&gt;</span><span class="n">SetHeader</span><span class="p">(</span><span class="s2">&quot;The Legend Title&quot;</span><span class="p">);</span>
+	<span class="n">leg</span><span class="o">-&gt;</span><span class="n">AddEntry</span><span class="p">(</span><span class="n">EvT</span><span class="p">,</span> <span class="s2">&quot;&lt;E&gt;&quot;</span><span class="p">,</span> <span class="s2">&quot;l&quot;</span><span class="p">);</span>
+	<span class="n">leg</span><span class="o">-&gt;</span><span class="n">AddEntry</span><span class="p">(</span><span class="n">MvT</span><span class="p">,</span> <span class="s2">&quot;&lt;M&gt;&quot;</span><span class="p">,</span> <span class="s2">&quot;l&quot;</span><span class="p">);</span>
+	<span class="n">leg</span><span class="o">-&gt;</span><span class="n">AddEntry</span><span class="p">(</span><span class="n">HCvT</span><span class="p">,</span> <span class="s2">&quot;HC&quot;</span><span class="p">,</span> <span class="s2">&quot;l&quot;</span><span class="p">);</span>
+	<span class="n">leg</span><span class="o">-&gt;</span><span class="n">AddEntry</span><span class="p">(</span><span class="n">MSvT</span><span class="p">,</span> <span class="s2">&quot;MS&quot;</span><span class="p">,</span> <span class="s2">&quot;l&quot;</span><span class="p">);</span>
+	<span class="n">leg</span><span class="o">-&gt;</span><span class="n">Draw</span><span class="p">();</span>
+
+	<span class="n">c1</span><span class="o">-&gt;</span><span class="n">Update</span><span class="p">();</span>
+        <span class="n">c1</span><span class="o">-&gt;</span><span class="n">Print</span><span class="p">(</span><span class="s2">&quot;plot.pdf&quot;</span><span class="p">);</span>
+        <span class="n">c1</span><span class="o">-&gt;</span><span class="n">Print</span><span class="p">(</span><span class="s2">&quot;plot.png&quot;</span><span class="p">);</span>
+	
+	<span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<a class="reference internal image-reference" href="_images/plot1.png"><img alt="Quantities vs. Temperature" src="_images/plot1.png" style="width: 400px;" /></a>
 </div>
 </div>
 
