@@ -70,7 +70,7 @@ Examples
 .. literalinclude:: ../examples/plot.py
 
 .. image:: ../examples/plot.png
-  :width: 400
+  :width: 1000
   :alt: Quantities vs. Temperature
 
 **Plot (C++)**
@@ -78,7 +78,5 @@ Examples
 .. literalinclude:: ../freevirgil-cpp/examples/plot.cpp
 
 .. image:: ../freevirgil-cpp/examples/plot.png
-  :width: 400
+  :width: 1000
   :alt: Quantities vs. Temperature
-
-
