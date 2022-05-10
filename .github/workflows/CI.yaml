@@ -73,6 +73,8 @@ jobs:
 
     steps:
     - uses: actions/checkout@v1
+      with:
+        submodules: true
     - uses: ammaraskar/sphinx-action@master
       with:
         docs-folder: "docs/"
