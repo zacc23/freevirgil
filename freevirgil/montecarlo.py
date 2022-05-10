@@ -51,22 +51,22 @@ class montecarlo():
                 else:
                     net_E = -4 * ham.J
 
-        # TODO: explain how this works
-        net_E += 2*ham.mu * (2*spin.config[i] - 1) 
-        
-        usable = True
-        if (net_E > 0):
-        
-            rand = random.random()
-            if (rand > math.exp( -net_E/T )):
+	    # TODO: explain how this works
+	    net_E += 2*ham.mu * (2*spin.config[i] - 1) 
+	    
+	    usable = True
+	    if (net_E > 0):
+	    
+		rand = random.random()
+		if (rand > math.exp( -net_E/T )):
 
-                usable = False
+		    usable = False
 
-        if (usable):
+	    if (usable):
 
-            if (spin.config[i] == -1):
-                spin.config[i] = 1;
-            else:
+		if (spin.config[i] == -1):
+		    spin.config[i] = 1;
+		else:
                 spin.config[i] = -1;
 
         return spin
