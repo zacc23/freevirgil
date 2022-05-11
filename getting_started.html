@@ -213,6 +213,27 @@ c++ examples/plot.cpp -Ofast -I. $(root-config --cflags --libs) -Wall -Wpedantic
 </div>
 <a class="reference internal image-reference" href="_images/plot1.png"><img alt="Quantities vs. Temperature" src="_images/plot1.png" style="width: 1000px;" /></a>
 </div>
+<div class="section" id="speed">
+<h2>Speed<a class="headerlink" href="#speed" title="Permalink to this headline">¶</a></h2>
+<p>Tested by prefacing the execution command with <cite>time</cite> (with 10 sites)</p>
+<p><strong>Python (plot.py)</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">0</span><span class="n">m02</span><span class="o">.</span><span class="mi">72</span><span class="n">s</span> <span class="n">real</span>     <span class="mi">0</span><span class="n">m02</span><span class="o">.</span><span class="mi">61</span><span class="n">s</span> <span class="n">user</span>     <span class="mi">0</span><span class="n">m00</span><span class="o">.</span><span class="mi">08</span><span class="n">s</span> <span class="n">system</span>
+</pre></div>
+</div>
+<p><strong>C++ (plot.cpp)</strong></p>
+<ul class="simple">
+<li><p>Default optimization</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">0</span><span class="n">m00</span><span class="o">.</span><span class="mi">71</span><span class="n">s</span> <span class="n">real</span>     <span class="mi">0</span><span class="n">m00</span><span class="o">.</span><span class="mi">58</span><span class="n">s</span> <span class="n">user</span>     <span class="mi">0</span><span class="n">m00</span><span class="o">.</span><span class="mi">13</span><span class="n">s</span> <span class="n">system</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>With g++ -Ofast flag</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">0</span><span class="n">m00</span><span class="o">.</span><span class="mi">54</span><span class="n">s</span> <span class="n">real</span>     <span class="mi">0</span><span class="n">m00</span><span class="o">.</span><span class="mi">43</span><span class="n">s</span> <span class="n">user</span>     <span class="mi">0</span><span class="n">m00</span><span class="o">.</span><span class="mi">12</span><span class="n">s</span> <span class="n">system</span>
+</pre></div>
+</div>
+</div>
 </div>
 
 
@@ -228,6 +249,7 @@ c++ examples/plot.cpp -Ofast -I. $(root-config --cflags --libs) -Wall -Wpedantic
 <li><a class="reference internal" href="#installation-c">Installation (C++)</a></li>
 <li><a class="reference internal" href="#references">References</a></li>
 <li><a class="reference internal" href="#examples">Examples</a></li>
+<li><a class="reference internal" href="#speed">Speed</a></li>
 </ul>
 </li>
 </ul>
