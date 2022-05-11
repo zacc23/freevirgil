@@ -80,3 +80,27 @@ Examples
 .. image:: ../freevirgil-cpp/examples/plot.png
   :width: 1000
   :alt: Quantities vs. Temperature
+
+Speed
+-----
+
+Tested by prefacing the execution command with `time` (with 10 sites)
+
+**Python (plot.py)**
+::
+
+    0m02.72s real     0m02.61s user     0m00.08s system
+
+**C++ (plot.cpp)**
+
+* Default optimization
+
+::
+
+    0m00.71s real     0m00.58s user     0m00.13s system
+
+* With g++ -Ofast flag
+
+::
+
+    0m00.54s real     0m00.43s user     0m00.12s system
